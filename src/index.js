@@ -80,9 +80,14 @@ class Main extends React.Component {
         }
     }
 
+    addColButton = () => {
+        this.numCols += 1;
+    }
+
     render () {
         return (
             <div>
+                
                 <ColorPalette
                 />
                 <h1>The Grid</h1>
