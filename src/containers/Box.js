@@ -11,7 +11,6 @@ class Box extends React.Component {
     selectBox = () => {
         
         let boxClass = this.props.color != null ? (this.state.className = "box " + this.props.color) : "box off";
-        console.log(boxClass);
         this.setState ({
             className: boxClass
         })

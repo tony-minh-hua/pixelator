@@ -80,14 +80,33 @@ class Main extends React.Component {
         }
     }
 
-    addColButton = () => {
-        this.numCols += 1;
+    expandGridButton = () => {
+        let newCol = this.state.numCols += 1;
+        let newRow = this.state.numRows += 1;
+        this.setState ({
+            numCols: newCol,
+            numRows: newRow
+        }) 
+    }
+
+    reduceGridButton = () => {
+        let newCol = this.state.numCols -= 1;
+        let newRow = this.state.numRows -= 1;
+        this.setState ({
+            numCols: newCol,
+            numRows: newRow
+        }) 
     }
 
     render () {
         return (
             <div>
-                
+                <button className = "btn btn-default" onClick = { () => this.expandGridButton()}>
+                    Expand Size
+                    </button>
+                    <button className = "btn btn-default" onClick = { () => this.reduceGridButton()}>
+                    Reduce Size
+                    </button>
                 <ColorPalette
                 />
                 <h1>The Grid</h1>

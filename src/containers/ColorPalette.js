@@ -19,6 +19,9 @@ class ColorPalette extends React.Component {
                 <button className = "btn btn-default" onClick = { () => this.props.colorPicked("green")} >
                 Green
                 </button>
+                <button className = "btn btn-default" onClick = { () => this.props.colorPicked("yellow")} >
+                Yellow
+                </button>
                 <button className = "btn btn-default" onClick = { () => this.props.colorPicked("purple")} >
                 Purple
                 </button>
