@@ -4,7 +4,6 @@ import {connect} from 'react-redux';
 import {colorPicked} from '../actions/index';
 import { ButtonToolbar } from 'react-bootstrap';
 
-//Use array and map to create buttons; have an array somewhere else that contains all the colors already predefined
 class ColorPalette extends React.Component {
     
     render () {

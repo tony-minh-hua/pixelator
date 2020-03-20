@@ -7,8 +7,6 @@ import { Provider } from 'react-redux';
 import ColorPalette from './containers/ColorPalette';
 import Grid from './containers/Grid';
 
-//Consider splitting off the store and React Components to their own files
-
 const store = createStore(
     allReducers,
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
