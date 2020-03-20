@@ -2,9 +2,9 @@ const colorReducer = (state = null, action) => {
     switch (action.type) {
         case "COLOR_PICKED":
             return action.payload;
-            break;
+            default:
+                return state;
     }
-    return state;
 };
 
 export default colorReducer;
