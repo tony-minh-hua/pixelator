@@ -8,22 +8,14 @@ import Grid from './Grid';
 
 class Main extends React.Component {
 
-    expandGridButton = () => {
-        this.props.sizeIncreased(1);
-    }
-
-    reduceGridButton = () => {
-        this.props.sizeDecreased(1);
-    }
-
     render () {
         return (
             
             <div>
-                <button className = "btn btn-default" onClick = { () => this.expandGridButton()}>
+                <button className = "btn btn-default" onClick = { () => this.props.sizeIncreased(1)}>
                     Expand Size
                     </button>
-                    <button className = "btn btn-default" onClick = { () => this.reduceGridButton()}>
+                    <button className = "btn btn-default" onClick = { () => this.props.sizeDecreased(1)}>
                     Reduce Size
                     </button>
                 <ColorPalette
