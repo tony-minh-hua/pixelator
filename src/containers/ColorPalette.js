@@ -15,41 +15,19 @@ class ColorPalette extends React.Component {
                     {colors.map ( (T) => <button className = "btn btn-default" onClick = { () => this.props.colorPicked (T)} key = {T}>
                     {T}
                     </button>)};
-                    {/* 
-                <button className = "btn btn-default" onClick = { () => this.props.colorPicked("red")} >
-                Red
-                </button>
-                <button className = "btn btn-default" onClick = { () => this.props.colorPicked("blue")} >
-                Blue
-                </button>
-                <button className = "btn btn-default" onClick = { () => this.props.colorPicked("green")} >
-                Green
-                </button>
-                <button className = "btn btn-default" onClick = { () => this.props.colorPicked("yellow")} >
-                Yellow
-                </button>
-                <button className = "btn btn-default" onClick = { () => this.props.colorPicked("purple")} >
-                Purple
-                </button>
-                <button className = "btn btn-default" onClick = { () => this.props.colorPicked("brown")} >
-                Brown
-                </button>
-                <button className = "btn btn-default" onClick = { () => this.props.colorPicked("orange")} >
-                Orange
-                </button>
-                */}
                 </ButtonToolbar>
             </div>
         )
     }
 }
 
+
 function mapStateToProps(state) {
     return {
         color: state.color
-        
     };
 }
+
 
 function matchDispatchToProps(dispatch) {
     return bindActionCreators({

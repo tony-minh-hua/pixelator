@@ -2,6 +2,22 @@ export const colorPicked = (color) => {
   return {
     type: 'COLOR_PICKED',
     payload: color,
-    key: ""
+    key: ''
   };
 };
+
+export const sizeIncreased = (increment) => {
+  return {
+    type: 'SIZE_INCREASED',
+    payload: increment,
+    key: ''
+  }
+}
+
+export const sizeDecreased = (increment) => {
+  return {
+    type: 'SIZE_DECREASED',
+    payload: increment,
+    key: ''
+  }
+}

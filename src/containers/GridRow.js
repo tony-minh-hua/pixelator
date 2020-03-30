@@ -4,27 +4,8 @@ import Box from './Box';
 class GridRow extends React.Component{
 
     render () {
-        /*
-        let boxesCol = [];
 
-        let boxClass = "";
-
-        for (let y = 0; y < this.props.numCols; y++) {
-
-            boxClass = "box off";
-            
-            boxesCol.push (
-                <Box
-                boxClass = {boxClass}
-                key = {y}
-                col = {y}
-                row = {this.props.row}
-                />
-            );
-        }
-        */
-
-       let boxesCol = [...Array(this.props.numCols).keys()];
+       let boxesCol = [...Array(this.props.numRows).keys()];
 
         return (
             <div className = "gridRow">
