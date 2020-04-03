@@ -32,7 +32,7 @@ class Main extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        size: state.currentSize
+        size: state.currentGrid.size
     };
 }
 

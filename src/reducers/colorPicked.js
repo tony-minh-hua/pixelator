@@ -1,3 +1,6 @@
+/*
+This reducer manages the color selection.
+*/
 const colorReducer = (state = null, action) => {
     switch (action.type) {
         case "COLOR_PICKED":

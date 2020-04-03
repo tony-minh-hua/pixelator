@@ -21,19 +21,19 @@ class ColorPalette extends React.Component {
     }
 }
 
-
+/*
 function mapStateToProps(state) {
     return {
         color: state.color
     };
 }
-
+*/
 
 function matchDispatchToProps(dispatch) {
     return bindActionCreators({
         colorPicked: colorPicked},
-         dispatch)
-    
+         dispatch)  
 }
 
-export default connect (mapStateToProps, matchDispatchToProps)(ColorPalette);
+//export default connect (mapStateToProps, matchDispatchToProps)(ColorPalette);
+export default connect (null, matchDispatchToProps)(ColorPalette);

@@ -10,9 +10,8 @@ class GridRow extends React.Component{
         return (
             <div className = "gridRow">
             {boxesCol.map((y) => <Box 
-                key = {y}
-                col = {y}
-                row = {this.props.row}
+                key = {this.props.row + "-" + y}
+                id = {this.props.row + "-" + y}
             />)}
             </div>
         )

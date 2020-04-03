@@ -21,3 +21,11 @@ export const sizeDecreased = (increment) => {
     key: ''
   }
 }
+
+export const tileChanged = (cell) => {
+  return {
+    type: "COLOR_CHANGED",
+    payload: cell,
+    key: ''
+  }
+}

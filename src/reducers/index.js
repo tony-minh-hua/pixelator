@@ -1,10 +1,10 @@
 import colorReducer from './colorPicked';
-import sizeReducer from './sizeChanged';
+import gridReducer from './gridChanged';
 import { combineReducers } from 'redux';
 
 const allReducers = combineReducers ({
     activeColor: colorReducer,
-    currentSize: sizeReducer
+    currentGrid: gridReducer
 });
 
 export default allReducers;

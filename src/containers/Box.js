@@ -1,27 +1,40 @@
 import React from 'react';
+import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
+import {tileChanged} from '../actions/index';
 
 class Box extends React.Component {
+    /*
     constructor () {
         super();
+        
         this.state = {
             className: "box off"
         }
+        
     }    
     selectBox = () => {
-        
-        let boxClass = this.props.color != null ? ("box " + this.props.color) : "box off";
+        let boxColor = this.props.grid.gridData.find (e => e.id === this.props.key).color;
+        let boxClass = boxcolor != null ? ("box " + boxcolor) : "box off";
+        //TODO: updated state should be sent to Redux store
         this.setState ({
             className: boxClass
         })
+        
     }
+    */
+    //componentDidMount () {
+    //    this.props.tileDefault();
+    //}
     
     render () {
+        
+        let boxColor = this.props.grid.gridData.find (e => e.id === this.props.id).color;
         return (
             <div
-                className = {this.state.className}
-                id = {this.props.id}
-                onClick = {this.selectBox}
+                className = {boxColor != null ? ("box " + boxColor) : "box off"}
+                key = {this.props.key}
+                onClick = {() => this.props.tileChanged( {id: this.props.id, color: this.props.color} )}
             />
         )
     }
@@ -29,8 +42,15 @@ class Box extends React.Component {
 
 function mapStateToProps (state) {
     return {
-        color: state.activeColor
+        color: state.activeColor,
+        grid: state.currentGrid
     };
 }
 
-export default connect(mapStateToProps)(Box);
+function matchDispatchToProps(dispatch) {
+    return bindActionCreators({
+        tileChanged: tileChanged},
+         dispatch)  
+}
+
+export default connect(mapStateToProps, matchDispatchToProps)(Box);
