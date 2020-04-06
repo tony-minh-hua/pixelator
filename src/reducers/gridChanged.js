@@ -4,7 +4,7 @@ import undoable from 'redux-undo';
 This reducer manages the size (x,y) dimensions of the grid.
 */
 
-const gridReducer = (state = {size: 1, gridData: gridStarter(1)}, action) => {
+const gridReducer = (state = {size: 25, gridData: gridStarter(25)}, action) => {
     switch (action.type) {
         case "SIZE_INCREASED":
             let addedData = cloneDeep(state);
@@ -25,7 +25,7 @@ const gridReducer = (state = {size: 1, gridData: gridStarter(1)}, action) => {
             }
             return addedData;
         case "SIZE_DECREASED":
-            return {...state, size: state.size - action.payload};
+            return state.size === 0 ? state : {...state, size: state.size - action.payload};
         case "COLOR_CHANGED":
             let newData = cloneDeep(state);
             newData.gridData.find(e => e.id === action.payload.id).color = action.payload.color;
