@@ -43,7 +43,7 @@ class Box extends React.Component {
 function mapStateToProps (state) {
     return {
         color: state.activeColor,
-        grid: state.currentGrid
+        grid: state.currentGrid.present
     };
 }
 

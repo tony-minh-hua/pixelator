@@ -1,4 +1,5 @@
 import { cloneDeep } from "lodash";
+import undoable from 'redux-undo';
 /*
 This reducer manages the size (x,y) dimensions of the grid.
 */
@@ -42,6 +43,8 @@ const gridReducer = (state = {size: 1, gridData: gridStarter(1)}, action) => {
     }
 };
 
+const undoableGridReducer = undoable(gridReducer)
+
 const gridStarter = (size) => {
     let grid = [];
     for (let i = 0; i < size; i++) {
@@ -52,4 +55,5 @@ const gridStarter = (size) => {
     return grid;
 }
 
-export default gridReducer;
+export default undoableGridReducer;
+//export default gridReducer;

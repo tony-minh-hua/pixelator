@@ -14,7 +14,9 @@
     "react-lodash": "^0.1.2",
     "react-redux": "^7.1.3",
     "react-scripts": "3.4.0",
-    "redux": "^4.0.5"
+    "redux": "^4.0.5",
+    "redux-undo": "^1.0.1",
+    "redux-undoable": "^1.0.2"
   },
   "scripts": {
     "start": "react-scripts start",

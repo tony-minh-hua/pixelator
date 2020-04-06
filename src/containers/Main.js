@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import {sizeIncreased, sizeDecreased} from '../actions/index';
 import '../index.css';
 import ColorPalette from './ColorPalette';
+import UndoRedo from './UndoRedo';
 import Grid from './Grid';
 
 class Main extends React.Component {
@@ -12,6 +13,7 @@ class Main extends React.Component {
         return (
             
             <div>
+                <UndoRedo />
                 <button className = "btn btn-default" onClick = { () => this.props.sizeIncreased(1)}>
                     Expand Size
                     </button>
@@ -32,7 +34,7 @@ class Main extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        size: state.currentGrid.size
+        size: state.currentGrid.present.size
     };
 }
 
