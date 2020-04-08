@@ -4,29 +4,6 @@ import {connect} from 'react-redux';
 import {tileChanged} from '../actions/index';
 
 class Box extends React.Component {
-    /*
-    constructor () {
-        super();
-        
-        this.state = {
-            className: "box off"
-        }
-        
-    }    
-    selectBox = () => {
-        let boxColor = this.props.grid.gridData.find (e => e.id === this.props.key).color;
-        let boxClass = boxcolor != null ? ("box " + boxcolor) : "box off";
-        //TODO: updated state should be sent to Redux store
-        this.setState ({
-            className: boxClass
-        })
-        
-    }
-    */
-    //componentDidMount () {
-    //    this.props.tileDefault();
-    //}
-    
     render () {
         
         let boxColor = this.props.grid.gridData.find (e => e.id === this.props.id).color;

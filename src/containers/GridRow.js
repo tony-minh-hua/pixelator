@@ -2,7 +2,6 @@ import React from 'react';
 import Box from './Box';
 
 class GridRow extends React.Component{
-
     render () {
 
        let boxesCol = [...Array(this.props.numRows).keys()];

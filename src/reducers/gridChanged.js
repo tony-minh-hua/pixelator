@@ -56,4 +56,3 @@ const gridStarter = (size) => {
 }
 
 export default undoableGridReducer;
-//export default gridReducer;
