@@ -11,14 +11,14 @@ const gridReducer = (state = {size: 25, gridData: gridStarter(25)}, action) => {
             addedData.size += action.payload;
             for (let i = state.size; i < state.size + action.payload; i++) {
                 for (let j = 0; j < state.size + action.payload; j++) {
-                    if (state.gridData.find(e => e.id === i + "-" + j) == undefined) {
+                    if (state.gridData.find(e => e.id === i + "-" + j) === undefined) {
                         addedData.gridData.push ({id: i + "-" + j, color: null})
                     }
                 }
             }
             for (let j = state.size; j < state.size + action.payload; j++) {
                 for (let i = 0; i < state.size + action.payload - 1; i++) {
-                    if (state.gridData.find(e => e.id === i + "-" + j) == undefined) {
+                    if (state.gridData.find(e => e.id === i + "-" + j) === undefined) {
                         addedData.gridData.push ({id: i + "-" + j, color: null})
                     }
                 }
@@ -27,9 +27,10 @@ const gridReducer = (state = {size: 25, gridData: gridStarter(25)}, action) => {
         case "SIZE_DECREASED":
             return state.size === 0 ? state : {...state, size: state.size - action.payload};
         case "COLOR_CHANGED":
-            let newData = cloneDeep(state);
-            newData.gridData.find(e => e.id === action.payload.id).color = action.payload.color;
-            return newData;
+            let newGridData = [ ...state.gridData ];
+            let index = newGridData.findIndex(e => e.id === action.payload.id);
+            newGridData[index] = { ...state.gridData[index], color: action.payload.color };
+            return { ...state, gridData: newGridData };
         case "GRID_DEFAULT":
             let newGrid = [];
                 for (let i = 0; i < state.size; i++) {
